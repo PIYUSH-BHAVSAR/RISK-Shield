@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - RiskShield</title>
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container flex justify-between items-center">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">Ψ</div>
+        <span class="nav-logo-text">RiskShield</span>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 200px); padding: 2rem 0;">
+    <div class="card" style="width: 100%; max-width: 400px;">
+      <div class="card-header">
+        <h2 class="card-title">Welcome to RiskShield</h2>
+        <p class="card-description">Sign in to your account or create a new one</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tabs-list">
+          <button class="tabs-trigger active" data-tab="login">Sign In</button>
+          <button class="tabs-trigger" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- Login Tab -->
+        <div class="tabs-content active" id="login-tab">
+          <form id="login-form" class="card-content">
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">Sign In</button>
+
+            <button type="button" class="btn btn-outline w-full" id="forgot-password-btn" style="margin-top: 0.5rem;">
+              Forgot Password?
+            </button>
+          </form>
+        </div>
+
+        <!-- Sign Up Tab -->
+        <div class="tabs-content" id="signup-tab">
+          <form id="signup-form" class="card-content">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input type="password" id="signup-confirm-password" name="confirmPassword" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+              <label for="kyc-upload">KYC Document (Optional)</label>
+              <div style="border: 2px dashed var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; cursor: pointer;" id="kyc-upload-area">
+                <div id="kyc-upload-content">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 0.5rem; color: var(--muted-foreground);">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <p style="font-weight: 500;">Click to upload</p>
+                  <p style="font-size: 0.75rem; color: var(--muted-foreground);">PNG, JPG or PDF</p>
+                </div>
+                <input type="file" id="kyc-file-input" accept=".pdf,.png,.jpg,.jpeg" style="display: none;">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-overlay" id="forgot-password-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Reset Password</h2>
+      </div>
+      <div class="modal-body">
+        <form id="forgot-password-form">
+          <div class="form-group">
+            <label for="reset-email">Email Address</label>
+            <input type="email" id="reset-email" name="email" placeholder="you@example.com" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="close-forgot-password">Back to Login</button>
+        <button type="submit" form="forgot-password-form" class="btn btn-primary">Send Reset Link</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-bottom">
+      <p>© 2024 RiskShield. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

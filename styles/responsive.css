@@ -1,0 +1,471 @@
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+
+   
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+
+  .grid-cols-2-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .grid-cols-3-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #result-card {
+    padding: 1rem !important;
+  }
+  
+  /* Smaller icon on mobile */
+  #result-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 2rem !important;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  h1 { font-size: 3rem; }
+
+  .grid-cols-4-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .flex-lg-row {
+    flex-direction: row;
+  }
+
+  .w-1-2-lg {
+    width: 50%;
+  }
+
+  .w-1-3-lg {
+    width: 33.333%;
+  }
+
+  .ml-auto-lg {
+    margin-left: auto;
+  }
+   .prediction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+   .prediction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* ============================================
+   MOBILE (under 768px)
+   ============================================ */
+@media (max-width: 767px) {
+  nav .container {
+    gap: 1rem;
+  }
+
+  .nav-logo-text {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card);
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-links:not(.active) {
+    display: none;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-2-md,
+  .grid-cols-3-md,
+  .grid-cols-4-lg {
+    grid-template-columns: 1fr;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .flex-col-mobile {
+    flex-direction: column;
+  }
+
+  .w-full-mobile {
+    width: 100%;
+  }
+
+  .text-sm {
+    font-size: 0.75rem;
+  }
+
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  .hero-section {
+    text-align: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 0.75rem;
+  }
+
+  th, td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .tabs-list {
+    overflow-x: auto;
+  }
+
+  .tabs-trigger {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (under 480px)
+   ============================================ */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1rem; }
+
+  .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-lg {
+    padding: 0.5rem 1rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .gap-2 { gap: 0.25rem; }
+  .gap-3 { gap: 0.5rem; }
+  .gap-4 { gap: 0.75rem; }
+
+  .p-4 { padding: 0.75rem; }
+  .p-6 { padding: 1rem; }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.7rem;
+  }
+
+  th, td {
+    padding: 0.25rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 0;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+   #result-card > div > div:last-child {
+      flex-direction: column !important;
+      gap: 1rem !important;
+    }
+    
+    #result-card > div > div:last-child > div:nth-child(2) {
+      display: none !important; /* Hide divider */
+    }
+  }
+  /* Make Recent Predictions table scrollable without breaking layout */
+#recent-predictions {
+  overflow-x: auto;
+}
+
+#recent-predictions table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap; /* allows scrolling without squeezing */
+}
+
+#recent-predictions th,
+#recent-predictions td {
+  white-space: nowrap;
+}
+/* ============================================
+   LANDSCAPE ORIENTATION (max-height: 600px)
+   ============================================ */
+@media (max-height: 600px) {
+  nav {
+    padding: 0.5rem 0;
+  }
+
+  h1 { font-size: 1.5rem; }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .card,
+  .btn {
+    border: 1px solid black;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: more) {
+  :root {
+    --primary: #0055ff;
+    --secondary: #6600ff;
+    --border: #000;
+    --muted: #e0e0e0;
+  }
+
+  :root.dark {
+    --primary: #44ffff;
+    --secondary: #ff00ff;
+    --border: #fff;
+    --muted: #1a1a1a;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading spinner animation */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth transitions for result cards */
+#results-container,
+#loading-state,
+#empty-state {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Risk factor cards hover effect */
+#risk-factors-list > div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#risk-factors-list > div:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input focus states */
+#prediction-form input:focus,
+#prediction-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Button states */
+#prediction-form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Recent predictions table hover */
+#recent-predictions tbody tr:hover {
+  background-color: var(--muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Status badge animations */
+.badge {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Print styles for results */
+@media print {
+  nav,
+  footer,
+  #prediction-form,
+  #new-prediction-btn,
+  #save-result-btn,
+  #recent-predictions {
+    display: none !important;
+  }
+  
+  #results-container {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+}
+ /* Additional styles for side-by-side layout */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }

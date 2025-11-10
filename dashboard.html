@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - RiskShield</title>
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container flex justify-between items-center">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">Ψ</div>
+        <span class="nav-logo-text">RiskShield</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/dashboard.html" class="nav-link active">Dashboard</a></li>
+        <li><a href="/analytics.html" class="nav-link">Analytics</a></li>
+        <li><a href="/model-performance.html" class="nav-link">Model</a></li>
+        <li><a href="/single-prediction.html" class="nav-link">Predict</a></li>
+         <li><a href="/bulk-prediction.html" class="nav-link">Bulk Predict</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container py-8">
+      <div style="margin-bottom: 2rem;">
+        <h1>Dashboard</h1>
+        <p class="text-muted">Monitor transactions and fraud detection results in real-time</p>
+      </div>
+
+      <!-- Summary Cards -->
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Total Transactions</p>
+              <p style="font-size: 2rem; font-weight: 700;" id="total-transactions">24,582</p>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Fraud Rate</p>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--destructive);" id="fraud-rate">0.8%</p>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--destructive);">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="12 7 15 13 9 13"></polygon>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Total Volume</p>
+              <p style="font-size: 2rem; font-weight: 700;" id="total-volume">$245K</p>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="12" cy="5" r="1"></circle>
+              <circle cx="12" cy="19" r="1"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Verified Users</p>
+              <p style="font-size: 2rem; font-weight: 700;" id="verified-users">7</p>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Search</label>
+            <input type="text" id="search-input" placeholder="Search by ID...">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Prediction</label>
+            <select id="filter-prediction">
+              <option value="">All Predictions</option>
+              <option value="Legitimate">Legitimate</option>
+              <option value="Risky">Risky</option>
+              <option value="Fraud">Fraud</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Channel</label>
+            <select id="filter-channel">
+              <option value="">All Channels</option>
+              <option value="Mobile App">Mobile App</option>
+              <option value="Web">Web</option>
+              <option value="API">API</option>
+              <option value="ATM">ATM</option>
+              <option value="Wire Transfer">Wire Transfer</option>
+            </select>
+          </div>
+          <div style="display: flex; align-items: flex-end;">
+            <button class="btn btn-primary w-full" id="export-btn">Export CSV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction Table -->
+      <div class="card" style="overflow-x: auto; margin-bottom: 2rem;">
+        <table id="transactions-table">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Customer ID</th>
+              <th>KYC Verified</th>
+              <th>Amount</th>
+              <th>Channel</th>
+              <th>Prediction</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <p style="font-size: 0.875rem; color: var(--muted-foreground);" id="pagination-info"></p>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-outline" id="prev-page">Previous</button>
+          <div id="page-buttons" style="display: flex; gap: 0.25rem;"></div>
+          <button class="btn btn-outline" id="next-page">Next</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-bottom">
+      <p>© 2024 RiskShield. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

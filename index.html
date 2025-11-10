@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RiskShield - AI-Powered Fraud Detection</title>
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container flex justify-between items-center">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">Ψ</div>
+        <span class="nav-logo-text">RiskShield</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/auth.html" class="nav-link">Auth</a></li>
+        <li><a href="/dashboard.html" class="nav-link">Dashboard</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" title="Toggle dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="/auth.html" class="btn btn-primary hidden-mobile">Sign In</a>
+        <button class="mobile-menu-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="py-8">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Side -->
+          <div class="animate-slide-up">
+            <div class="alert alert-info" style="width: fit-content; margin-bottom: 1.5rem;">
+              <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Hybrid ML + Rule-Based Fraud Detection
+            </div>
+
+            <h1 style="margin-bottom: 1.5rem;">Detect Fraud <span class="text-gradient">in Real-Time</span></h1>
+
+            <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 2rem; max-width: 500px;">
+              Our CatBoost-based fraud detection model is optimized for **high fraud recall (83%)**, ensuring suspicious transactions are caught early — backed by a robust ROC-AUC of 0.80.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; max-width: 400px;">
+              <a href="/auth.html" class="btn btn-primary btn-lg btn-block">Get Started Free</a>
+              <button class="btn btn-outline btn-lg btn-block">Watch Demo</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                ✅ No credit card required
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                ✅ REST API + SDK Support
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                ✅ 24/7 Support
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side - Dashboard Preview -->
+          <div class="card" style="position: relative;">
+            <div style="background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-bottom: 1px solid var(--border); border-radius: calc(var(--radius) + 0.25rem) calc(var(--radius) + 0.25rem) 0 0;">
+              <h3 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem;">Model Performance Snapshot</h3>
+              <p style="font-size: 0.75rem; color: var(--muted-foreground);">Latest Evaluation</p>
+            </div>
+
+            <div style="padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+              <div style="background: var(--muted); padding: 0.75rem; border-radius: var(--radius);">
+                <p style="font-size: 0.75rem; margin-bottom: 0.5rem;">Fraud Detection Recall</p>
+                <p style="font-size: 1.25rem; font-weight: 700;">83%</p>
+              </div>
+              <div style="background: var(--muted); padding: 0.75rem; border-radius: var(--radius);">
+                <p style="font-size: 0.75rem; margin-bottom: 0.5rem;">ROC-AUC</p>
+                <p style="font-size: 1.25rem; font-weight: 700;">0.80</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="padding: 4rem 0; border-top: 1px solid var(--border); background-color: var(--muted);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2 style="margin-bottom: 1rem;">Powerful Features</h2>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+          <div class="card">
+            <div class="feature-icon">⚡</div>
+            <h3>Real-Time Analysis</h3>
+            <p>Sub-200ms fraud detection API for live financial systems.</p>
+          </div>
+
+          <div class="card">
+            <div class="feature-icon">🧠</div>
+            <h3>Recall-Optimized Model</h3>
+            <p>Engine tuned to **catch maximum fraud attempts** using class-weight balancing and adaptive thresholding.</p>
+          </div>
+
+          <div class="card">
+            <div class="feature-icon">📊</div>
+            <h3>Detailed Analytics</h3>
+            <p>Dashboards, KPIs, breakdowns, and risk attribution analysis.</p>
+          </div>
+
+          <div class="card">
+            <div class="feature-icon">🔒</div>
+            <h3>Bank-Grade Security</h3>
+            <p>Encrypted transport, role-based access, full audit logs.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025 RiskShield. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/mock-data.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>
