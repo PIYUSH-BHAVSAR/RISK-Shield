@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: riskshield-frontend
+    env: static
+    buildCommand: echo "No build required"
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /styles/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /js/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
