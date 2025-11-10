@@ -1,0 +1,19 @@
+
+# Render redirect rules
+# This file should be placed in your root directory
+
+# Serve exact HTML files
+/index.html /index.html 200
+/dashboard.html /dashboard.html 200
+/analytics.html /analytics.html 200
+/auth.html /auth.html 200
+/bulk-prediction.html /bulk-prediction.html 200
+/model-performance.html /model-performance.html 200
+/single-prediction.html /single-prediction.html 200
+
+# CSS and JS files
+/styles/* /styles/:splat 200
+/js/* /js/:splat 200
+
+# Fallback for SPA-like routing
+/* /index.html 200
